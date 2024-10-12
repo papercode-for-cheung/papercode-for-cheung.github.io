@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheung's Personal Website (张的课题组)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -12,13 +13,68 @@
             justify-content: center;
             background-color: #f5f5f5;
         }
-              /* 左侧栏样式 */
+
+        .main-container {
+            width: 1200px; /* 整个页面的宽度 */
+            display: flex;
+            position: relative;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            position: fixed; /* 导航栏固定在顶部 */
+            top: 0;
+            width: 1162px;
+            background-color: #E8E8E8; /* 背景颜色 */
+            padding: 10px 20px;
+            z-index: 1000; /* 确保导航栏在最上层 */
+            left: 50%; /* 将导航栏的左边移动到视口的中央 */
+            transform: translateX(-50%); /* 使导航栏居中对齐 */
+            justify-content: space-between; /* 左右两边分布 */
+        }
+
+        .navbar .left-text {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style-type: none; /* 去掉列表样式 */
+            margin: 0;
+            padding: 0;
+            display: flex; /* 横向排列链接 */
+            justify-content: flex-end; /* 将导航栏中的内容靠右对齐 */
+        }
+
+        .navbar li {
+            padding: 0 20px; /* 每个导航链接的左右间距 */
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #2A2D30; /* 悬停时改变颜色 */
+        }
+
+        /* 左侧固定的侧边栏 */
         .sidebar {
-            width: 18%;
+            position: fixed; /* 固定在页面左侧 */
+            width: 170px; /* 15% 的宽度：1200px * 0.15 = 180px */
+            height: 100%; /* 占据整个页面高度 */
             background-color: #f5f5f5;
             padding: 5px;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            left: calc((100vw - 1200px) / 2); /* 计算主容器左侧的偏移，确保居中 */
+            margin-top: 45px;
         }
+
+
         .sidebar img {
             width: 150px;
             height: 150px;
@@ -46,44 +102,15 @@
             margin: 10px 0;
         }
 
-        .container {
-            width: 1150px;
-            background-color: #fff;
-            display: flex;
-        }
-<!--        .navbar {-->
-<!--            width: 75px;-->
-<!--            background-color: #f8f9fa;-->
-<!--            padding: 10px;-->
-<!--            box-shadow: 2px 0 5px rgba(0,0,0,0.1);-->
-<!--            position: fixed;-->
-<!--            height: 100%;-->
-<!--            top: 0;-->
-<!--            left: 47%;-->
-<!--            transform: translateX(-540px);-->
-<!--        }-->
-<!--        .navbar h2 {-->
-<!--            margin-top: 0;-->
-<!--        }-->
-<!--        .navbar a {-->
-<!--            display: block;-->
-<!--            color: #333;-->
-<!--            text-decoration: none;-->
-<!--            padding: 10px 0;-->
-<!--            margin: 10px 0;-->
-<!--            font-size: 18px;-->
-<!--        }-->
-<!--        .navbar a:hover {-->
-<!--            color: #007bff;-->
-<!--        }-->
+
         .content {
-            margin-left: 0px;
-            padding: 10px;
-            flex-grow: 1;
-            width: 810px;
+            margin-left: 185px; /* 留出 180px 的侧边栏空间 */
+            width: 1035px; /* 剩余的 85% 宽度：1200px - 180px */
+            padding: 5px;
+            margin-top: 45px;
         }
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             padding: 15px;
             border: 0px solid #ddd;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -106,118 +133,122 @@
         .spaced {
             line-height: 1.8;
         }
+        .paper {
+            display: flex;
+            border: 2px solid #ddd;
+            padding: 6px;
+            margin: 6px;
+            border-radius: 8px;
+            width: 950px;
+            height: auto;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+        }
+        .paper img {
+            width: 450px;
+            height: auto;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .paper-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .paper-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .paper-authors {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .paper-link a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .paper-link a:hover {
+            text-decoration: underline;
+        }
+        .paper-code {
+            margin-top: 8px;
+        }
+        .paper-code a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .paper-code a:hover {
+            text-decoration: underline;
+        }
+        .paper-description {
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+        .paper-badge {
+            background-color: #2541b2;
+            color: white;
+            font-size: 0.8em;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        /* 针对某个特定的链接去除下划线 */
+        a.no-underline {
+            text-decoration: none;
+            color: black; /* 设置颜色为黑色 */
+        }
+
+        /* 可选：鼠标悬停时保持无下划线 */
+        a.no-underline:hover {
+            text-decoration: none;
+            color: black; /* 设置颜色为黑色 */
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
+<div class="main-container">
+    <div class="navbar">
+<!--        <div class="left-text">ABC</div>-->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="mystudents.html">Students</a></li>
+        </ul>
+    </div>
+
+    <div class="sidebar">
             <img src="img/peiliang.png" alt="Profile Picture">
-            <p style="font-family: Times New Roman; font-size:26px; color:black"><b>Peiliang Zhang</b></p>
+            <p style="font-family: Times New Roman; font-size:24px; color:black"><b>Peiliang Zhang</b></p>
             <br>
-            <p style="font-family: Times New Roman; font-size:22px; color:black"><b>Ph.D. Student</b></p>
+            <p style="font-family: Times New Roman; font-size:18px; color:black"><b>Ph.D. Student</b></p>
 
-            <p style="font-family: Times New Roman; font-size:22px; color:black"><b>Wuhan University of Technology</b></p>
+            <p style="font-family: Times New Roman; font-size:18px; color:black"><b>Wuhan University of Technology</b></p>
             <br>
-            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left">&#128204; Wuhan, China</p>
-            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left">&#127970; Rm 1208 Aite Bldg</p>
-            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left">&#128233; cheungbl@ieee.org</p>
-            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left">&#128222; (+86)17866553961</p>
-<!--            <p style="font-family: Times New Roman; font-size:18px; color:black; text-align:left">&#128279; <a href="http://faculty.dlut.edu.cn/wangpf">faculty.dlut.edu.cn/wangpf</a></p>-->
-        </div>
-<!--        <div class="navbar">-->
-<!--&lt;!&ndash;            <h2>Author Name</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;            <a href="#about">About</a>&ndash;&gt;-->
-<!--            <p><a href="#News" class="fontsize_based" style="font-size:16px; font-family: Times New Roman;">News</a></p>-->
-<!--            <p><a href="#Educational Experience" class="fontsize_based" style="font-size:16px; font-family: Times New Roman;">Educational Experience</a></p>-->
-<!--            <p><a href="#Research Interests" class="fontsize_based" style="font-size:16px; font-family: Times New Roman;">Research Interests</a></p>-->
-<!--            <p><a href="#Selected Publications" class="fontsize_based" style="font-size:16px; font-family: Times New Roman;">Selected Publications</a></p>-->
-<!--            <p><a href="#Patents" class="fontsize_based" style="font-size:16px; font-family: Times New Roman;">Patents</a></p>-->
-<!--            <p><a href="#Honors and Awards" class="fontsize_based" style="font-size:16px; font-family: Times New Roman;">Honors & Awards</a></p>-->
-<!--            <p><a href="#Academic Services" class="fontsize_based" style="font-size:16px; font-family: Times New Roman;">Academic Services</a></p>-->
-<!--            <p><a href="#Students" class="fontsize_based" style="font-size:16px; font-family: Times New Roman;">Students</a></p>-->
+            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fa fa-map-marker"></i> Wuhan, China</p>
+            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fa fa-institution"></i> Rm 1208 Aite Bldg</p>
+            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fa fa-envelope"></i> cheungbl@ieee.org</p>
+            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fab fa-weixin"></i>WHUT_PZ</p>
+            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fab fa-internet-explorer"></i> <a href="http://www.ai4science-in-zhang-lab.com/" class="no-underline">Website</a></p>
+            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fab fa-github"></i> <a href="https://github.com/papercode-for-cheung" class="no-underline">Github</a></p>
+            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fa fa-graduation-cap"></i> <a href="https://scholar.google.com.hk/citations?user=KiRnrXgAAAAJ&hl=zh-CN" class="no-underline">Google Scholar</a></p>
 
-<!--&lt;!&ndash;            <a href="#research">Research</a>&ndash;&gt;-->
-<!--&lt;!&ndash;            <a href="#publications">Publications</a>&ndash;&gt;-->
-<!--&lt;!&ndash;            <a href="#contact">Contact</a>&ndash;&gt;-->
-<!--        </div>-->
-        <div class="content">
+
+       </div>
+    <div class="content">
             <div class="section" id="about">
                 <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">Welcome</h1>
-<!--                <h1>About</h1>-->
-<!--                <table>-->
-<!--			        <tbody>-->
-<!--			        <tr>-->
-<!--				        <td width="200" valign="top">-->
-<!--					        <img style="margin-top: 8px;" src="img/peiliang.png" width="180" alt="Peiliang Zhang">-->
-<!--				        </td>-->
-<!--				        <td valign="top">-->
-<!--					        <p style="font-family: Times New Roman;font-size:26px;"><b>Peiliang Zhang 张培良</b></p>-->
-<!--					        <p style="font-size:18px; font-family: Times New Roman;">-->
-<!--					        Ph.D. Student in School of Computer Science and Artificial Intelligence at <a href="https://www.whut.edu.cn/">Wuhan University of Technology</a>-->
-<!--					        </p>-->
-<!--					        <p style="font-size:18px; font-family: Times New Roman;">-->
-<!--                                武汉理工大学，计算机与人工智能学院，博士生-->
-<!--					        </p>-->
-<!--					<table>-->
-<!--						<tbody>-->
-<!--							<tr style="font-size:18px; font-family: Times New Roman;">-->
-<!--								<td>-->
-<!--									<b>Email:</b>-->
-<!--								</td>-->
-<!--								<td>-->
-<!--									cheungbl@ieee.org-->
-<!--								</td>-->
-<!--							</tr>-->
-<!--								<tr style="font-size:18px; font-family: Times New Roman;">-->
-<!--									<td>-->
-<!--									<b>Phone:</b>-->
-<!--								</td>-->
-<!--									<td>-->
-<!--									+86 17866553961-->
-<!--								</td>-->
-<!--								</tr>-->
-<!--								<tr style="font-size:18px; font-family: Times New Roman;">-->
-<!--								<td>-->
-<!--									<b>Address: &nbsp;</b>-->
-<!--								</td>-->
-<!--								<td>-->
-<!--									Rm 1208 Aite Bldg, No. 21 Gongda Rd, Hongshan Dist, Wuhan City, China, 430070-->
-<!--								</td>-->
-<!--							</tr>-->
-<!--								<tr style="font-size:18px; font-family: Times New Roman;">-->
-<!--								<td>-->
-<!--									<b>Links:</b>-->
-<!--								</td>-->
-<!--								<td>-->
-<!--									[<a href="https://scholar.google.com.hk/citations?user=KiRnrXgAAAAJ&hl=zh-CN">Google Scholar</a>|<a href="https://www.webofscience.com/wos/author/record/GSI-4920-2022">Web of Sciences</a>|<a href="https://orcid.org/0000-0002-1826-3349">ORCID</a>]-->
-<!--								</td>-->
-<!--							</tr>-->
-<!--								<tr style="font-size:18px; font-family: Times New Roman;">-->
-<!--								<td>-->
-<!--									<b>WeChat:</b>-->
-<!--								</td>-->
-<!--								<td>-->
-<!--									17866553961-->
-<!--								</td>-->
-<!--							</tr>-->
-
-<!--						</tbody>-->
-<!--					</table>-->
-<!--				</td>-->
-<!--			</tr>-->
-<!--			</tbody>-->
-<!--		</table>-->
                 <p style="text-align:justify; text-justify:inter-ideograph; font-size:18px; font-family: Times New Roman;">
-                    I am a Ph.D. Student in School of Computer Science and Artificial Intelligence at <a href="https://www.whut.edu.cn/"><b>Wuhan University of Technology</b></a>, Wuhan, China.
-                I am also a visiting Ph.D. student in <a href="https://datalab.yonsei.ac.kr/"> <b>Yonsei DataLab</b> </a> under the direction of Associate Prof. Yongjun Zhu at <b>Yonsei University</b>, Seoul, South Korea.</p>
+                    He is currently a 3rd-year Ph.D. Student in School of Computer Science and Artificial Intelligence at <a href="https://www.whut.edu.cn/"><b>Wuhan University of Technology</b></a>, Wuhan, China, advised by Prof. Jingling Yuan and Prof. Lin Li.
+                    He is also currently a visiting Ph.D. student in <a href="https://datalab.yonsei.ac.kr/"> <b>Yonsei DataLab</b> </a> supervised by Associate Prof. Yongjun Zhu at <b>Yonsei University</b>, Seoul, South Korea.</p>
                  <p style="text-align:justify; text-justify:inter-ideograph; font-size:18px; font-family: Times New Roman;">
-				My research interest includes AI for Science, Molecular Representation and Medical Informatics, etc.
-				I has published more than 10 papers in high quality conferences and journals, such as DASFAA, IEEE BIBM, ESWA, etc.
-			</p>
-<!--			<p style="text-align:justify; text-justify:inter-ideograph; font-size:17px; font-family: 微软雅黑体;">-->
-<!--				Dr. Zhang joined the A school after receiving a Ph.D. in Computer Science and Technology from Wuhan University of Technology, Wuhan, China.-->
-<!--				From 2024 to 2025, he was a visiting Ph.D. student in Yonsei DataLab under the direction of Prof. Yongjun Zhu at Yonsei University, Seoul, South Korea.-->
-<!--			</p>-->
+				    His research interest includes AI for Science, Molecular Representation and Medical Informatics, etc.
+				    He has published more than 10 papers in high quality conferences and journals, such as DASFAA, IEEE BIBM, ESWA, etc. He has also served as a reviewer of multiple conferences and journals, including AAAI, TII, and bioinformatics.
+			    </p>
             </div>
 
 
@@ -236,7 +267,7 @@
              <div class="section" id="Educational Experience">
                 <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">Educational Experience</h1>
                 <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 10px 0;"><i class="iconfont">&#xe697;</i> <b>Ph.D.</b>: Sep. 2022 to present, School of Computer Science and Artificial Intelligence, Wuhan University of Technology, Computer Science and Technology (Academic), Supervisor: &nbsp;<a href="http://cst.whut.edu.cn/xygk/szdw/201505/t20150527_876882.shtml">Prof. Jingling Yuan</a></li>
-				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 10px 0;"><i class="iconfont">&#xe697;</i> <b>Joint Ph.D.</b>: Dec. 2024 to present, Yonsei DataLab, Department of Library and Information Science, Yonsei University, Supervisor: &nbsp;<a href="https://datalab.yonsei.ac.kr/yongjunzhu/">Associate Prof. Yongjun Zhu</a></li>
+				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 10px 0;"><i class="iconfont">&#xe697;</i> <b>Visiting Ph.D.</b>: Dec. 2024 to present, Yonsei DataLab, Department of Library and Information Science, Yonsei University, Supervisor: &nbsp;<a href="https://datalab.yonsei.ac.kr/yongjunzhu/">Associate Prof. Yongjun Zhu</a></li>
                 <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 10px 0;"><i class="iconfont">&#xe697;</i> <b>M.D.</b>: Sep. 2019 to Jun. 2022, Key Laboratory of Advanced Design and Intelligent Computing, Ministry of Education, Dalian University, Software Engineering (Academic), Supervisor: &nbsp;<a href="http://nlcad.dlu.edu.cn/info/1005/2161.htm">Prof. Chao Che</a></li>
 				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 10px 0;"><i class="iconfont">&#xe697;</i> <b>B.D.</b>: Sep. 2015 to Jun. 2019, School of Information Science and Engineering, Shandong Agricultural University, Computer Science and Technology, Supervisor: &nbsp;<a href="http://xinxi.sdau.edu.cn/yjs/2021/0705/c12290a187615/page.htm">Prof. Lu Wang</a></li>
             </div>
@@ -259,67 +290,62 @@
 
             <div class="section" id="Selected Publications">
                 <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">Selected Publications</h1>
-                <a class="fontsize_based" style="font-size:18px; font-family: Times New Roman;">*: corresponding author, #: co-author.</a>
-                <p class="fontsize_based" style="font-size:18px; font-family: Times New Roman;"><b>2024</b></p>
-                <ol>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        <b>Peiliang Zhang</b>#, Yujia Tong#, Chenghu Du, Chao Che*, Yongjun Zhu. JSCDS: A Core Data Selection Method with Jason-Shannon Divergence for Caries RGB Images-Efficient Learning [C]. Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining workshops on Artificial Intelligence and Data Science for Healthcare: Bridging Data-Centric AI and People-Centric Healthcare (KDD-AIDSH), 2024.
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        Yunjiong Liu, <b>Peiliang Zhang</b>, Chao Che*, Ziqi Wei. SDDSynergy: Learning Important Molecular Substructures for Explainable Anti-Cancer Drug Synergy Prediction [J]. Journal of Chemical Information and Modeling, 2024. (<b>JCR Q1, 中科院SCI 2区, TOP期刊, IF 5.6</b>)
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        <b>Peiliang Zhang</b>, Jingling Yuan*, Lin Li, Wen Luo, Jiwei Hu, Xin Li. Key Substructure Learning with Chemical Intuition for Material Property Prediction [C]. Proceedings of the 29th International Conference on Database Systems for Advanced Applications (DASFAA), 2024. (<b>CCF B类会议</b>)
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        Yang Chen, <b>Peiliang Zhang*</b>, Tong Wu, Jiwei Hu, Xin Zhang, Yi Liu. LCPTCN: Lightweight Temporal Convolutional Network with Cross-Group Pruning for Dynamic Load Forecasting [C]. Proceedings of the International Conference on Cloud and Network Computing (ICCNC), 2024.
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        Lijuan Lv, <b>Peiliang Zhang*</b>. How can green industry policy facilitate carbon emissions reduction? Evidence from China's National Eco-Industrial Demonstration Parks [J]. Clean Technologies and Environmental Policy, 2024. (JCR Q2, 中科院SCI 4区, IF 4.3)
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        Suxing Tong, Jingling Yuan*, <b>Peiliang Zhang</b>, Lin Li. Legal Judgment Prediction via Graph Boosting with Constraints [J]. Information Processing and Management, 2024, 61(3): 103663. (<b>CCF B类期刊, JCR Q1, 中科院SCI 1区, TOP期刊, IF 8.6</b>)
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        <b>Peiliang Zhang</b>, Chao Che*, Bo Jin, Jingling Yuan, Ruixin Li, Yongjun Zhu. NCH-DDA: Neighborhood Contrastive Learning Heterogeneous Network for Drug-Disease Association Prediction [J]. Expert Systems with Application, 2024, 238: 121855. (<b>CCF C类期刊, JCR Q1, 中科院SCI 1区, TOP期刊, IF 8.5</b>)
-                    </li>
-                </ol>
+<!--                <a class="fontsize_based" style="font-size:18px; font-family: Times New Roman;">*: corresponding author, #: co-author.</a>-->
 
-                <p class="fontsize_based" style="font-size:18px; font-family: Times New Roman;"><b>2023</b></p>
-                <ol>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                       <b>Peiliang Zhang</b>, Yuanjie Liu, Zhishu Shen*. KSGTN-DDI: Key Substructure-aware Graph Transformer Network for Drug-Drug Interaction Prediction [C]. Proceedings of the International Conference on Bioinformatics and Biomedicine (BIBM), 2023: 974-977. (<b>CCF B类会议</b>)
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                       <b>Peiliang Zhang</b>, Jiatao Chen, Chao Che*, Liang Zhang, Bo Jin, Yongjun Zhu. IEA-GNN: Anchor-aware Graph Neural Network Fused with Information Entropy for Node Classification and Link Prediction [J]. Information Sciences, 2023, 634: 665-676. (<b>CCF B类期刊, JCR Q1, 中科院SCI 1区, TOP期刊, IF 8.1</b>)
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        Hao Jiang, <b>Peiliang Zhang</b>, Chao Che*, Bo Jin, Yongjun Zhu. CariesFG: A Fine-grained RGB Image Classification Method for Dental Caries Incorporating Attention Mechanism and Discriminative Features [J]. Engineering Applications of Artificial Intelligence (EAAI), 2023, 123: 106306. (<b>CCF C类期刊, JCR Q1, 中科院SCI 2区, TOP期刊, IF 8.0</b>)
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        Siyu Yang, <b>Peiliang Zhang</b>, Chao Che, Zhaoqian Zhong*. B-LBConA: A Medical Entity Disambiguation Model based on Bio-LinkBERT and Context-Aware Mechanism [J]. BMC Bioinformatics, 2023, 24(1): 1-18. (<b>CCF C类期刊</b>, JCR Q2, 中科院SCI 4区, IF 3.0)
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                       Zhuoya Liu, Tang Chi, <b>Peiliang Zhang</b>, Xiaoting Wu, Chao Che*. A Biomedical Named Entity Recognition Framework with Multi-Granularity Prompt Tuning [C]. Proceedings of the 8th China Health Information Processing Conference (CHIP 2022), 2023: 95-105.
-                    </li>
-                </ol>
+                <div class="paper">
+                    <img src="img/paperimg/KSCI.png" alt="Paper image">
+                    <div class="paper-content">
+                        <div>
+                            <div class="paper-badge">DASFAA 2024</div>
+                            <div class="paper-title">
+                                <a href="https://link.springer.com/chapter/10.1007/978-981-97-5575-2_6" target="_blank">Key Substructure Learning with Chemical Intuition for Material Property Prediction</a>
+                            </div>
+                            <div class="paper-authors">
+                                <strong>Peiliang Zhang</strong>, Jingling Yuan, Lin Li, Wen Luo, Jiwei Hu, Xin Li
+                            </div>
+                            <div class="paper-code">
+<!--                                <a href="https://your-code-link.com" target="_blank" style="margin-right: 16px;"><i class="fas fa-file-code icon" title="Code File"></i> Code</a>-->
+                                <a href="https://link.springer.com/chapter/10.1007/978-981-97-5575-2_6" target="_blank" style="margin-right: 16px; color: #ff5733;"><i class="fas fa-file-pdf icon" title="PDF File"></i> PDF</a>
+<!--                                <a href="https://your-code-link.com" target="_blank" style="margin-right: 16px; color: #9c27b0;"><i class="fas fa-file-video icon" title="Video File"></i> Vedio</a>-->
+                                <a href="https://github.com/papercode-for-cheung/paper/blob/main/KSCI/KSCIPPT.pdf" target="_blank" style="margin-right: 16px; color: #FF0000;"><i class="fas fa-file-powerpoint icon" title="PowerPoint File"></i> PPT</a>
+                            </div>
+                            <div class="paper-description" style="text-align:justify">
+                               The paper proposed the key substructure learning with chemical intuition.
+                                KSCI is used to capture irregular substructures within molecules and
+                                to identify the differential contributions of these substructures to chemical properties.
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <p class="fontsize_based" style="font-size:18px; font-family: Times New Roman;"><b>2022</b></p>
-                <ol>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        <b>Peiliang Zhang</b>, Ziqi Wei, Chao Che*, Bo Jin. DeepMGT-DTI: Transformer Network Incorporating Multilayer Graph Information for Drug-Target Interaction Prediction [C]. Computers in Biology and Medicine (CIBM), 2022, 142: 105214. (<b>JCR Q1, 中科院SCI 2区, IF 7.7</b>)
-                    </li>
-                </ol>
+                <div class="paper">
+                    <img src="img/paperimg/NCHDDA.png" alt="Paper image">
+                    <div class="paper-content">
+                        <div>
+                            <div class="paper-badge">ESWA 2024</div>
+                            <div class="paper-title">
+                                <a href="https://www.sciencedirect.com/science/article/pii/S0957417423023576" target="_blank">NCH-DDA: Neighborhood Contrastive Learning Heterogeneous Network for Drug-Disease Association Prediction</a>
+                            </div>
+                            <div class="paper-authors">
+                                <strong>Peiliang Zhang</strong>, Chao Che, Bo Jin, Jingling Yuan, Ruixin Li, Yongjun Zhu
+                            </div>
+                            <div class="paper-code">
+                                <a href="https://github.com/papercode-for-cheung/NCH_code" target="_blank" style="margin-right: 16px;"><i class="fas fa-file-code icon" title="Code File"></i> Code</a>
+                                <a href="https://pdf.sciencedirectassets.com/271506/1-s2.0-S0957417423X00281/1-s2.0-S0957417423023576/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEEaCXVzLWVhc3QtMSJHMEUCIQDvpgqajP%2BKrYs7PdyhUHbVcibzVBAT06D2dkYFz%2FuNRAIgNcj%2F9HEUmzJ%2BS6rylZF6rVA6l6fwa2hGbQse0kgm65kquwUImv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAFGgwwNTkwMDM1NDY4NjUiDKoXqeU%2FZhErOG7E9CqPBVJFyB3QFYRvdC1eVcN63oCLZF4zQrUN2SMHsFvlNhjI5M44BY8HHcAHB2raHMJd2%2FHxeD9l5eTHJJNf77dsXXZ72LjzwVKuoFQt5%2BTtHkYnMTxb7Xk6vRtO9A21WylRnHu6Lv1H7QqsdmX%2Fb%2BhfFQQ%2FnRvsJeorhy%2BUqNlKTYmrwaSEHgIaXxH%2Bp%2Btbf65jpMPJ3gRMSbY4VpC%2BqnyNCNNMeGbSx6JJ%2BLu0bork2vfkcEOd9tMZugzoAu3gY0WfrBvlb%2FCNHcxlrCcwrNWGhJY92Ero0r%2BOCO1UC1Do4mAAPZ8AVtgUi9Q6yMDoTaOjnlxfur5EDyT2596ssljvA0PQ5E3Y53trP2AsgCSGXrRTfj8kaCzvDNa%2FHVulN3AGcmCxITdNNmxbMx1icSPWytCR8yIp%2F5zcW53wlbM23VhQaXxsg80l%2BKmDUoFDZ0OpXguJWm5Docx69AO1VIRsOt6gzG2mx7Ee2PF3ziRTpPFpUhjOtdf7nY5iEMT3HivYlWTF69vyEJVoKn%2Bm0Ny%2BXt%2FdiDQxOp1pgKuWlh3%2BNay2y0kJWXbcpjkvXCwSmJqQOFPz7eYZYMWMtZ0qb%2BR161toCO22YC%2BoN9odyp0t2mTGIpxaOwyxVkqZM5smW7zRZpoGn52%2Bx61mg2OoIGgZS5y5D0ASqC8lRYVtX%2F9mbyXiqEbvWMnB5OHjRExGPIgnJOTtHBYY%2FFC9a7tv5eAfa%2BPSOJkISlvJ7SrpoCqL1ObFePkBIi0qTi7VsUO6Ok68hfmSSuhIy0JW2sTCc9VmqTowZw23nhca0X9mAWyRmSrYv9lpsAfl7c18HTyTBOjYOyCSx4kDD2karr%2Bnq%2BgsffSmoyL2w1a8H8cR3uCiUlow%2BIKnuAY6sQHlifzW8YvPKUXYFPhICUnwp5hLJC1yKHNLsQkFFuhoC7vsT3j%2BSdyGjnuSBJEjRA%2FJRZRbJBe8hMrTagojEFcfmmtTKAm25Gp0gc%2FqAWHHNtv100AagL6WCuSQckdnigO9GAtJ3hfVN3ZT1yMwX5gnk3Yd1zm9ZuLBMNuHBkyuTNhuULAkAv0uti%2BbydxigFL4cNlum58yFff%2Bfmkrwwaq%2FfXSBxdRCRX4wxdwVC7dE7A%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20241012T013152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY5E6XGNBI%2F20241012%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=300cba5242ee82d3caf27c2449ffaee9c4d18a12d69cb447b468ecae1bf0c49a&hash=ce52e853be1ac9d903e8a169ee04511df707aa8e93b708612f08e9974af9b457&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0957417423023576&tid=spdf-2ab68c66-5d68-4925-812f-c09a918fdace&sid=36c39d3c4766c049f5-b6ba-0134d106f8e2gxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=0e11590156545152505f02&rr=8d135531c98b4a8d&cc=tw" target="_blank" style="margin-right: 16px; color: #ff5733;"><i class="fas fa-file-pdf icon" title="PDF File"></i> PDF</a>
+<!--                                <a href="https://your-code-link.com" target="_blank" style="margin-right: 16px; color: #9c27b0;"><i class="fas fa-file-video icon" title="Video File"></i> Vedio</a>-->
+<!--                                <a href="https://your-code-link.com" target="_blank" style="margin-right: 16px; color: #FF0000;"><i class="fas fa-file-powerpoint icon" title="PowerPoint File"></i> PPT</a>-->
+                            </div>
+                            <div class="paper-description" style="text-align:justify">
+                               The paper proposed the Neighborhood Contrastive Learning for Heterogeneous Networks, which integrates information from multiple domains such as drugs and diseases.
+                                NCH-DDA enhances the generalization ability of drug repositioning models and shows greater potential for application in sparse data scenarios.
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <p class="fontsize_based" style="font-size:18px; font-family: Times New Roman;"><b>2021</b></p>
-                <ol>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        Chao Che*, <b>Peiliang Zhang</b>, Min Zhu, Yue Qu, Bo Jin. Constrained Transformer Network for ECG Signal Processing and Arrhythmia Classification [C]. BMC Medical Informatics and Decision Making, 2021, 21(1): 1-13. (导师一作、本人二作, JCR Q2, 中科院SCI 3区, IF 3.5)
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        Hao Jiang, <b>Peiliang Zhang</b>, Chao Che*, Bo Jin. RDFNet: A Fast Caries Detection Method Incorporating Transformer Mechanism [C]. Computational and Mathematical Methods in Medicine, 2021, 2021: 9773917. (JCR Q2, 中科院SCI 4区, IF 2.809)
-                    </li>
-                </ol>
+
+
+
             </div>
 
 
@@ -429,7 +455,10 @@
 		    </div>
 
         </div>
-    </div>
+
+
+
+</div>
 </body>
 <style>
 /* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
