@@ -12,21 +12,82 @@
             justify-content: center;
             background-color: #f5f5f5;
         }
+
+        .main-container {
+            width: 1200px; /* 整个页面的宽度 */
+            display: flex;
+            position: relative;
+        }
+
+        /* 导航栏样式 */
+        .navbartop {
+            position: fixed; /* 导航栏固定在顶部 */
+            top: 0;
+            width: 1162px;
+            background-color: #E8E8E8; /* 背景颜色 */
+            padding: 10px 20px;
+            z-index: 1000; /* 确保导航栏在最上层 */
+            left: 50%; /* 将导航栏的左边移动到视口的中央 */
+            transform: translateX(-50%); /* 使导航栏居中对齐 */
+            justify-content: space-between; /* 左右两边分布 */
+        }
+
+        .navbartop .left-text {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbartop ul {
+            list-style-type: none; /* 去掉列表样式 */
+            margin: 0;
+            padding: 0;
+            display: flex; /* 横向排列链接 */
+            justify-content: flex-end; /* 将导航栏中的内容靠右对齐 */
+        }
+
+        .navbartop li {
+            padding: 0 20px; /* 每个导航链接的左右间距 */
+        }
+
+        .navbartop a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbartop a:hover {
+            color: #2A2D30; /* 悬停时改变颜色 */
+        }
+
+
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            background-color: #f5f5f5;
+        }
         .container {
-            width: 1150px;
+            width: 1200px;
             background-color: #fff;
             display: flex;
+            margin-top: 45px;
         }
         .navbar {
-            width: 75px;
+            width: 100px;
             background-color: #f8f9fa;
-            padding: 10px;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            padding: 5px;
+            box-shadow: 2px 0 0px rgba(0,0,0,0.1);
             position: fixed;
             height: 100%;
             top: 0;
             left: 47%;
             transform: translateX(-540px);
+            margin-top: 45px;
         }
         .navbar h2 {
             margin-top: 0;
@@ -35,18 +96,18 @@
             display: block;
             color: #333;
             text-decoration: none;
-            padding: 10px 0;
-            margin: 10px 0;
-            font-size: 18px;
+            padding: 5px 0;
+            margin: 0px 0;
+            font-size: 20px;
         }
         .navbar a:hover {
             color: #007bff;
         }
         .content {
-            margin-left: 90px;
-            padding: 10px;
+            margin-left: 105px;
+            padding: 15px;
             flex-grow: 1;
-            width: 810px;
+            width: 1080px;
         }
         .section {
             margin-bottom: 20px;
@@ -59,11 +120,11 @@
             margin-left: 0px;
             padding: 5px;
             flex-grow: 1;
-            width: 1000px;
+            width: 1048px;
         }
         .section_2 {
             margin-bottom: 20px;
-            padding: 10px;
+            padding: 15px;
             border: 0px solid #ddd;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             background-color: #e8e8e8;
@@ -85,12 +146,21 @@
     </style>
 </head>
 <body>
+<div class="main-container">
+    <div class="navbartop">
+<!--        <div class="left-text">ABC</div>-->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="mystudents.html">Students</a></li>
+        </ul>
+    </div>
     <div class="container">
         <div class="navbar">
 <!--            <h2>Author Name</h2>-->
 <!--            <a href="#about">About</a>-->
-            <p><a href="#Master" class="fontsize_based" style="font-size:16px; font-family: Times New Roman;">Master</a></p>
-            <p><a href="#Undergraduate" class="fontsize_based" style="font-size:16px; font-family: Times New Roman;">Under-graduate</a></p>
+            <p><a href="#Master" class="fontsize_based" style="font-size:20px; font-family: Times New Roman;"><b>Master</b></a></p>
+            <p><a href="#Undergraduate" class="fontsize_based" style="font-size:20px; font-family: Times New Roman;"><b>Under-graduate</b></a></p>
 
 
 <!--            <a href="#research">Research</a>-->
@@ -372,6 +442,8 @@
 
         </div>
     </div>
+</div>
+
 </body>
 <style>
     @font-face {
