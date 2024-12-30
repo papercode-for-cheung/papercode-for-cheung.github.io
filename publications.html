@@ -3,300 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publication Page of Cheung's Personal Website (张的课题组)</title>
+    <title>Peiliang Zhang （张培良）</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            background-color: #f5f5f5;
-        }
-
-        .main-container {
-            width: 1200px; /* 整个页面的宽度 */
-            display: flex;
-            position: relative;
-        }
-
-        /* 导航栏样式 */
-        .navbartop {
-            position: fixed; /* 导航栏固定在顶部 */
-            top: 0;
-            width: 1162px;
-            background-color: #E8E8E8; /* 背景颜色 */
-            padding: 10px 20px;
-            z-index: 1000; /* 确保导航栏在最上层 */
-            left: 50%; /* 将导航栏的左边移动到视口的中央 */
-            transform: translateX(-50%); /* 使导航栏居中对齐 */
-            justify-content: space-between; /* 左右两边分布 */
-        }
-
-        .navbartop .left-text {
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .navbartop ul {
-            list-style-type: none; /* 去掉列表样式 */
+            font-family: "Times New Roman", Times, serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            display: flex; /* 横向排列链接 */
-            justify-content: flex-end; /* 将导航栏中的内容靠右对齐 */
-        }
-
-        .navbartop li {
-            padding: 0 20px; /* 每个导航链接的左右间距 */
-        }
-
-        .navbartop a {
-            text-decoration: none;
-            color: black;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .navbartop a:hover {
-            color: #2A2D30; /* 悬停时改变颜色 */
-        }
-
-
-
-        .container {
-            width: 1200px;
-            background-color: #fff;
-            display: flex;
-            margin-top: 45px;
-        }
-        .navbar {
-            position: fixed;
-            width: 100px;
-            height: 100%;
-            background-color: #f8f9fa;
-            padding: 5px;
-            box-shadow: 2px 0 0px rgba(0,0,0,0.1);
-            left: calc((100vw - 1200px) / 2); /* 计算主容器左侧的偏移，确保居中 */
-<!--            top: 0;-->
-<!--            left: 47%;-->
-<!--            transform: translateX(-540px);-->
-            margin-top: 45px;
-        }
-        .navbar h2 {
-            margin-top: 0;
-        }
-        .navbar a {
-            display: block;
+            background-color: #f4f4f9;
             color: #333;
-            text-decoration: none;
-            padding: 5px 0;
-            margin: 0px 0;
-            font-size: 20px;
+            text-align: justify;
         }
-        .navbar a:hover {
-            color: #007bff;
+        .container {
+            width: 1080px;
+            margin: 65px auto;
+            background: #fff;
+            padding: 20px 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .content {
-            margin-left: 105px;
-            padding: 15px;
-            flex-grow: 1;
-            width: 1075px;
+        h1 {
+            color: #0056a8;
+        }
+        h2 {
+            color: #0056a8;
+            border-bottom: 2px solid #0056a8;
+            padding-bottom: 5px;
+        }
+        .profile-picture {
+            float: right;
+            margin-left: 20px;
+            width: 200px;
+            border-radius: 8px;
         }
         .section {
             margin-bottom: 20px;
-            padding: 15px;
-            border: 0px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            background-color: #fff;
         }
-        .content_2 {
-            margin-left: 0px;
-            padding: 5px;
-            flex-grow: 1;
-            width: 1035px;
+        .email-link, .google-scholar {
+            color: #0056a8;
+            text-decoration: none;
         }
-        .section_2 {
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
             margin-bottom: 10px;
-            padding: 8px;
-            border: 0px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            background-color: #e8e8e8;
         }
-        .section h1 {
-            font-size: 24px;
-            margin-top: 0;
+        ul.education li {
+            margin-left: 40px;
+            position: relative;
         }
-        .section p {
-            font-size: 16px;
-            line-height: 1.5;
+        ul.education li::before {
+            content: "\2022";
+            color: #0056a8;
+            font-weight: bold;
+            display: inline-block;
+            width: 20px;
+            margin-left: -20px;
         }
-        .profile-pic {
-            width: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
+        .bold {
+            font-weight: bold;
         }
-        p{ margin:0 auto}
     </style>
 </head>
 <body>
-<div class="main-container">
-    <div class="navbartop">
-<!--        <div class="left-text">ABC</div>-->
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="mystudents.html">Students</a></li>
-        </ul>
-    </div>
     <div class="container">
-        <div class="navbar">
-<!--            <h2>Author Name</h2>-->
-<!--            <a href="#about">About</a>-->
-            	<p><a href="#2025" class="fontsize_based" style="font-size:20px; font-family: Times New Roman;"><b>2025年(#1)</b></a></p>
-		<p><a href="#2024" class="fontsize_based" style="font-size:20px; font-family: Times New Roman;"><b>2024年(#8)</b></a></p>
-            	<p><a href="#2023" class="fontsize_based" style="font-size:20px; font-family: Times New Roman;"><b>2023年(#5)</b></a></p>
-           	 <p><a href="#2022" class="fontsize_based" style="font-size:20px; font-family: Times New Roman;"><b>2022年(#1)</b></a></p>
-            	<p><a href="#2021" class="fontsize_based" style="font-size:20px; font-family: Times New Roman;"><b>2021年(#2)</b></a></p>
-
-
-<!--            <a href="#research">Research</a>-->
-<!--            <a href="#publications">Publications</a>-->
-<!--            <a href="#contact">Contact</a>-->
+        <h1>Publications</h1>
+        <div class="section">
+            <h2>2025 (#1)</h2>
+<!--                <h3 style="color: #0056a8">Journal</h3>-->
+<!--                    <ul class="education">-->
+<!--                        <li>-->
+<!--                            <strong style="color: #0056a8">[AAAI]</strong> <span style="color: #0056a8">OTAS: An Elastic Transformer Serving System via Token Adaptation</span>,<br>-->
+<!--                            Jinyu Chen, Wenchao Xu, <strong style="color: #0056a8">Zicong Hong*</strong>, Song Guo, Haozhao Wang, Jie Zhang and Deze Zeng. (*corresponding author)<br>-->
+<!--                            In IEEE International Conference on Computer Communications (INFOCOM '24), 2024. <br>-->
+<!--                            (<strong style="color: #0056a8">CCF-A</strong>)-->
+<!--                        </li>-->
+<!--                    </ul>-->
+                <h3 style="color: #0056a8">Conference</h3>
+                    <ul class="education">
+                        <li>
+                            <strong style="color: #0056a8">[AAAI]</strong> Zero-Shot Learning for Materials Science Texts: Leveraging Duck Typing Principles.<br>
+                            Xin Zhang, <strong style="color: #0056a8">Peiliang Zhang</strong>, Jingling Yuan*, Lin Li.<br>
+                            In <i>the 39th Annual AAAI Conference on Artificial Intelligence (AAAI)</i>, 2025. <br>
+                            (<strong style="color: #0056a8">CCF-A</strong>)
+                        </li>
+                    </ul>
         </div>
-        <div class="content">
-	<div class="section" id="2025">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">2025年</h1>
-                <div class="content_2">
-                    <div class="section_2">
-                        <ol>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                Xin Zhang, <b>Peiliang Zhang</b>, Jingling Yuan*, Lin Li. Zero-Shot Learning for Materials Science Texts: Leveraging Duck Typing Principles [C]. Proceedings of the 39th Annual AAAI Conference on Artificial Intelligence (AAAI), 2025. (<b>CCF A类会议</b>)
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
 
-
-		
-            <div class="section" id="2024">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">2024年</h1>
-                <div class="content_2">
-                    <div class="section_2">
-                        <ol>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                Lijuan Lv, <b>Peiliang Zhang*</b>. Green Location-Oriented Policies and Their Effect on Carbon Abatement Costs: Evidence from China's Eco-Industrial Demonstration Parks [J]. Environment, Development and Sustainability, 2024. (JCR Q2, 中科院SCI 3区, IF 4.7)
-                            </li>
-			    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                <b>Peiliang Zhang</b>#, Yujia Tong#, Chenghu Du, Chao Che*, Yongjun Zhu. JSCDS: A Core Data Selection Method with Jason-Shannon Divergence for Caries RGB Images-Efficient Learning [C]. Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining workshops on Artificial Intelligence and Data Science for Healthcare: Bridging Data-Centric AI and People-Centric Healthcare (KDD-AIDSH), 2024.
-                            </li>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                Yunjiong Liu, <b>Peiliang Zhang</b>, Chao Che*, Ziqi Wei. SDDSynergy: Learning Important Molecular Substructures for Explainable Anti-Cancer Drug Synergy Prediction [J]. Journal of Chemical Information and Modeling, 2024. (<b>JCR Q1, 中科院SCI 2区, TOP期刊, IF 5.6</b>)
-                            </li>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                <b>Peiliang Zhang</b>, Jingling Yuan*, Lin Li, Wen Luo, Jiwei Hu, Xin Li. Key Substructure Learning with Chemical Intuition for Material Property Prediction [C]. Proceedings of the 29th International Conference on Database Systems for Advanced Applications (DASFAA), 2024. (<b>CCF B类会议</b>)
-                            </li>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                Yang Chen, <b>Peiliang Zhang*</b>, Tong Wu, Jiwei Hu, Xin Zhang, Yi Liu. LCPTCN: Lightweight Temporal Convolutional Network with Cross-Group Pruning for Dynamic Load Forecasting [C]. Proceedings of the International Conference on Cloud and Network Computing (ICCNC), 2024.
-                            </li>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                Lijuan Lv, <b>Peiliang Zhang*</b>. How can green industry policy facilitate carbon emissions reduction? Evidence from China's National Eco-Industrial Demonstration Parks [J]. Clean Technologies and Environmental Policy, 2024. (JCR Q2, 中科院SCI 4区, IF 4.3)
-                            </li>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                Suxing Tong, Jingling Yuan*, <b>Peiliang Zhang</b>, Lin Li. Legal Judgment Prediction via Graph Boosting with Constraints [J]. Information Processing and Management, 2024, 61(3): 103663. (<b>CCF B类期刊, JCR Q1, 中科院SCI 1区, TOP期刊, IF 8.6</b>)
-                            </li>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                <b>Peiliang Zhang</b>, Chao Che*, Bo Jin, Jingling Yuan, Ruixin Li, Yongjun Zhu. NCH-DDA: Neighborhood Contrastive Learning Heterogeneous Network for Drug-Disease Association Prediction [J]. Expert Systems with Application, 2024, 238: 121855. (<b>CCF C类期刊, JCR Q1, 中科院SCI 1区, TOP期刊, IF 8.5</b>)
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section" id="2023">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">2023年</h1>
-                <div class="content_2">
-                    <div class="section_2">
-                        <ol>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                               <b>Peiliang Zhang</b>, Yuanjie Liu, Zhishu Shen*. KSGTN-DDI: Key Substructure-aware Graph Transformer Network for Drug-Drug Interaction Prediction [C]. Proceedings of the International Conference on Bioinformatics and Biomedicine (BIBM), 2023: 974-977. (<b>CCF B类会议</b>)
-                            </li>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                               <b>Peiliang Zhang</b>, Jiatao Chen, Chao Che*, Liang Zhang, Bo Jin, Yongjun Zhu. IEA-GNN: Anchor-aware Graph Neural Network Fused with Information Entropy for Node Classification and Link Prediction [J]. Information Sciences, 2023, 634: 665-676. (<b>CCF B类期刊, JCR Q1, 中科院SCI 1区, TOP期刊, IF 8.1</b>)
-                            </li>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                Hao Jiang, <b>Peiliang Zhang</b>, Chao Che*, Bo Jin, Yongjun Zhu. CariesFG: A Fine-grained RGB Image Classification Method for Dental Caries Incorporating Attention Mechanism and Discriminative Features [J]. Engineering Applications of Artificial Intelligence (EAAI), 2023, 123: 106306. (<b>CCF C类期刊, JCR Q1, 中科院SCI 2区, TOP期刊, IF 8.0</b>)
-                            </li>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                Siyu Yang, <b>Peiliang Zhang</b>, Chao Che, Zhaoqian Zhong*. B-LBConA: A Medical Entity Disambiguation Model based on Bio-LinkBERT and Context-Aware Mechanism [J]. BMC Bioinformatics, 2023, 24(1): 1-18. (<b>CCF C类期刊</b>, JCR Q2, 中科院SCI 4区, IF 3.0)
-                            </li>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                               Zhuoya Liu, Tang Chi, <b>Peiliang Zhang</b>, Xiaoting Wu, Chao Che*. A Biomedical Named Entity Recognition Framework with Multi-Granularity Prompt Tuning [C]. Proceedings of the 8th China Health Information Processing Conference (CHIP 2022), 2023: 95-105.
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="section" id="2022">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">2022年</h1>
-                <div class="content_2">
-                    <div class="section_2">
-                        <ol>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                <b>Peiliang Zhang</b>, Ziqi Wei, Chao Che*, Bo Jin. DeepMGT-DTI: Transformer Network Incorporating Multilayer Graph Information for Drug-Target Interaction Prediction [C]. Computers in Biology and Medicine (CIBM), 2022, 142: 105214. (<b>JCR Q1, 中科院SCI 2区, IF 7.7</b>)
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="section" id="2021">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">2021年</h1>
-                <div class="content_2">
-                    <div class="section_2">
-                        <ol>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                Chao Che*, <b>Peiliang Zhang</b>, Min Zhu, Yue Qu, Bo Jin. Constrained Transformer Network for ECG Signal Processing and Arrhythmia Classification [C]. BMC Medical Informatics and Decision Making, 2021, 21(1): 1-13. (导师一作、本人二作, JCR Q2, 中科院SCI 3区, IF 3.5)
-                            </li>
-                            <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                                Hao Jiang, <b>Peiliang Zhang</b>, Chao Che*, Bo Jin. RDFNet: A Fast Caries Detection Method Incorporating Transformer Mechanism [C]. Computational and Mathematical Methods in Medicine, 2021, 2021: 9773917. (JCR Q2, 中科院SCI 4区, IF 2.809)
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-<!--             <div style="text-align:center;">
-			    <a href='https://beian.miit.gov.cn/'>鲁ICP备2024081097号-1</a>
-		    </div> -->
-
+        <div class="section">
+            <h2>2024 (#8)</h2>
+                <h3 style="color: #0056a8">Journal</h3>
+                    <ul class="education">
+                        <li>
+                            <strong style="color: #0056a8">[EDS]</strong> Green Location-Oriented Policies and Their Effect on Carbon Abatement Costs: Evidence from China's Eco-Industrial Demonstration Parks.<br>
+                            Lijuan Lv, <strong style="color: #0056a8">Peiliang Zhang*</strong>. (Corresponding Author)<br>
+                            In <i>Environment, Development and Sustainability</i>, 2024. <br>
+                            (JCR Q2, 中科院SCI 3区, IF 4.7)
+                        </li>
+                        <li>
+                            <strong style="color: #0056a8">[JCIM]</strong> SDDSynergy: Learning Important Molecular Substructures for Explainable Anti-Cancer Drug Synergy Prediction.<br>
+                            Yunjiong Liu, <strong style="color: #0056a8">Peiliang Zhang</strong>, Chao Che*, Ziqi Wei.<br>
+                            In <i>Journal of Chemical Information and Modeling</i>, 2024. <br>
+                            (JCR Q1, 中科院SCI 2区, <strong style="color: #0056a8">TOP期刊</strong>, IF 5.6)
+                        </li>
+                        <li>
+                            <strong style="color: #0056a8">[CTEP]</strong> How can green industry policy facilitate carbon emissions reduction? Evidence from China's National Eco-Industrial Demonstration Parks.<br>
+                            Lijuan Lv, <strong style="color: #0056a8">Peiliang Zhang*</strong>. (Corresponding Author)<br>
+                            In <i>Clean Technologies and Environmental Policy</i>, 2024. <br>
+                            (JCR Q2, 中科院SCI 4区, IF 4.3)
+                        </li>
+                        <li>
+                            <strong style="color: #0056a8">[IP&M]</strong> Legal Judgment Prediction via Graph Boosting with Constraints.<br>
+                            Suxing Tong, Jingling Yuan*, <strong style="color: #0056a8">Peiliang Zhang</strong>, Lin Li.<br>
+                            In <i>Information Processing and Management</i>, 2024. <br>
+                            (<strong style="color: #0056a8">CCF B类期刊, JCR Q1, 中科院SCI 1区, TOP期刊, IF 8.6</strong>)
+                        </li>
+                        <li>
+                            <strong style="color: #0056a8">[ESWA]</strong> NCH-DDA: Neighborhood Contrastive Learning Heterogeneous Network for Drug-Disease Association Prediction.<br>
+                            <strong style="color: #0056a8">Peiliang Zhang</strong>, Chao Che*, Bo Jin, Jingling Yuan, Ruixin Li, Yongjun Zhu.<br>
+                            In <i>Expert Systems with Application</i>, 2024. <br>
+                            (<strong style="color: #0056a8">CCF C类期刊, JCR Q1, 中科院SCI 1区, TOP期刊, IF 8.5</strong>)
+                        </li>
+                    </ul>
+            <h3 style="color: #0056a8">Conference</h3>
+                <ul class="education">
+                    <li>
+                        <strong style="color: #0056a8">[KDD-AIDSH]</strong> JSCDS: A Core Data Selection Method with Jason-Shannon Divergence for Caries RGB Images-Efficient Learning.<br>
+                        <strong style="color: #0056a8">Peiliang Zhang</strong>#, Yujia Tong#, Chenghu Du, Chao Che*, Yongjun Zhu.<br>
+                        In <i>the ACM SIGKDD Conference on Knowledge Discovery and Data Mining workshops on Artificial Intelligence and Data Science for Healthcare: Bridging Data-Centric AI and People-Centric Healthcare (KDD-AIDSH)</i>, 2024. <br>
+<!--                        (<strong style="color: #0056a8"></strong>)-->
+                    </li>
+                    <li>
+                        <strong style="color: #0056a8">[DASFAA]</strong> Key Substructure Learning with Chemical Intuition for Material Property Prediction.<br>
+                        <strong style="color: #0056a8">Peiliang Zhang</strong>, Jingling Yuan*, Lin Li, Wen Luo, Jiwei Hu, Xin Li.<br>
+                        In <i>the 29th International Conference on Database Systems for Advanced Applications (DASFAA)</i>, 2024. <br>
+                        (<strong style="color: #0056a8"><b>CCF B类会议</b></strong>)
+                    </li>
+                    <li>
+                        <strong style="color: #0056a8">[ICCNC]</strong> LCPTCN: Lightweight Temporal Convolutional Network with Cross-Group Pruning for Dynamic Load Forecasting.<br>
+                        Yang Chen, <strong style="color: #0056a8">Peiliang Zhang*</strong>, Tong Wu, Jiwei Hu, Xin Zhang, Yi Liu. (Corresponding Author)<br>
+                        In <i>the International Conference on Cloud and Network Computing (ICCNC)</i>, 2024. <br>
+<!--                        (<strong style="color: #0056a8"></strong>)-->
+                    </li>
+                </ul>
         </div>
+
+        <div class="section">
+            <h2>2023 (#4)</h2>
+                <h3 style="color: #0056a8">Journal</h3>
+                    <ul class="education">
+                        <li>
+                            <strong style="color: #0056a8">[IS]</strong> IEA-GNN: Anchor-aware Graph Neural Network Fused with Information Entropy for Node Classification and Link Prediction.<br>
+                            <strong style="color: #0056a8">Peiliang Zhang</strong>, Jiatao Chen, Chao Che*, Liang Zhang, Bo Jin, Yongjun Zhu.<br>
+                            In <i>Information Sciences</i>, 2023. <br>
+                            (<strong style="color: #0056a8">CCF B类期刊, JCR Q1, 中科院SCI 1区, TOP期刊, IF 8.1</strong>)
+                        </li>
+                        <li>
+                            <strong style="color: #0056a8">[EAAI]</strong> CariesFG: A Fine-grained RGB Image Classification Method for Dental Caries Incorporating Attention Mechanism and Discriminative Features.<br>
+                            Hao Jiang, <strong style="color: #0056a8">Peiliang Zhang</strong>, Chao Che*, Bo Jin, Yongjun Zhu.<br>
+                            In <i>Engineering Applications of Artificial Intelligence (EAAI)</i>, 2023. <br>
+                            (<strong style="color: #0056a8">CCF C类期刊, JCR Q1, 中科院SCI 2区, TOP期刊, IF 8.0</strong>)
+                        </li>
+                        <li>
+                            B-LBConA: A Medical Entity Disambiguation Model based on Bio-LinkBERT and Context-Aware Mechanism.<br>
+                            Siyu Yang, <strong style="color: #0056a8">Peiliang Zhang</strong>, Chao Che, Zhaoqian Zhong*.<br>
+                            In <i>BMC Bioinformatics</i>, 2023. <br>
+                            (<strong style="color: #0056a8">CCF C类期刊</strong>, JCR Q2, 中科院SCI 4区, IF 3.0)
+                        </li>
+                    </ul>
+            <h3 style="color: #0056a8">Conference</h3>
+                <ul class="education">
+                    <li>
+                        <strong style="color: #0056a8">[BIBM]</strong> KSGTN-DDI: Key Substructure-aware Graph Transformer Network for Drug-Drug Interaction Prediction.<br>
+                        <strong style="color: #0056a8">Peiliang Zhang</strong>, Yuanjie Liu, Zhishu Shen*.<br>
+                        In <i>the International Conference on Bioinformatics and Biomedicine (BIBM)</i>, 2023. <br>
+                        (<strong style="color: #0056a8">CCF B类会议</strong>)
+                    </li>
+                </ul>
+        </div>
+
+        <div class="section">
+            <h2>2022 (#2)</h2>
+                <h3 style="color: #0056a8">Journal</h3>
+                    <ul class="education">
+                        <li>
+                            <strong style="color: #0056a8">[CIBM]</strong> DeepMGT-DTI: Transformer Network Incorporating Multilayer Graph Information for Drug-Target Interaction Prediction.<br>
+                            <strong style="color: #0056a8">Peiliang Zhang</strong>, Ziqi Wei, Chao Che*, Bo Jin.<br>
+                            In <i>Computers in Biology and Medicine (CIBM)</i>, 2022. <br>
+                            (<strong style="color: #0056a8">JCR Q1, 中科院SCI 2区, TOP期刊, IF 7.7</strong>)
+                        </li>
+
+                    </ul>
+            <h3 style="color: #0056a8">Conference</h3>
+                <ul class="education">
+                    <li>
+                        <strong style="color: #0056a8">[CHIP]</strong> A Biomedical Named Entity Recognition Framework with Multi-Granularity Prompt Tuning.<br>
+                        Zhuoya Liu, Tang Chi, <strong style="color: #0056a8">Peiliang Zhang</strong>, Xiaoting Wu, Chao Che*.<br>
+                        In <i>the 8th China Health Information Processing Conference (CHIP)</i>, 2022. <br>
+<!--                        (<strong style="color: #0056a8"></strong>)-->
+                    </li>
+                </ul>
+        </div>
+
+        <div class="section">
+            <h2>2021 (#2)</h2>
+                <h3 style="color: #0056a8">Journal</h3>
+                    <ul class="education">
+                        <li>
+                            Constrained Transformer Network for ECG Signal Processing and Arrhythmia Classification.<br>
+                            Chao Che*, <strong style="color: #0056a8">Peiliang Zhang</strong>, Min Zhu, Yue Qu, Bo Jin. (导师一作、本人二作)<br>
+                            In <i>BMC Medical Informatics and Decision Making</i>, 2021. <br>
+                            (JCR Q2, 中科院SCI 3区, IF 3.5)
+                        </li>
+                        <li>
+                            RDFNet: A Fast Caries Detection Method Incorporating Transformer Mechanism.<br>
+                            Hao Jiang, <strong style="color: #0056a8">Peiliang Zhang</strong>, Chao Che*, Bo Jin.<br>
+                            In <i>Computational and Mathematical Methods in Medicine</i>, 2021. <br>
+                            (JCR Q2, 中科院SCI 4区, IF 2.809)
+                        </li>
+                    </ul>
+        </div>
+
+
+
+
     </div>
-</div>
-
 </body>
-<style>
-    @font-face {
-  font-family: 'iconfont';  /* Project id 4318487 */
-  src:
-       url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4318487_5uxjj2yjqo8.woff?t=1714041968210') format('woff'),
-       url('//at.alicdn.com/t/c/font_4318487_5uxjj2yjqo8.ttf?t=1714041968210') format('truetype');
-}
-            /* 方式一： */
-            .iconfont {
-                font-family: "iconfont";
-                font-size: 22px;
-                font-style: normal;
-                -webkit-font-smoothing: antialiased;
-                -webkit-text-stroke-width: 0.2px;
-                -moz-osx-font-smoothing: grayscale;
-            }
-</style>
+
 </html>
