@@ -3,135 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheung's Personal Website (张的课题组)</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Peiliang Zhang （张培良）</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            background-color: #f5f5f5;
-        }
-
-        .main-container {
-            width: 1200px; /* 整个页面的宽度 */
-            display: flex;
-            position: relative;
-        }
-
-        /* 导航栏样式 */
-        .navbar {
-            position: fixed; /* 导航栏固定在顶部 */
-            top: 0;
-            width: 1162px;
-            background-color: #E8E8E8; /* 背景颜色 */
-            padding: 10px 20px;
-            z-index: 1000; /* 确保导航栏在最上层 */
-            left: 50%; /* 将导航栏的左边移动到视口的中央 */
-            transform: translateX(-50%); /* 使导航栏居中对齐 */
-            justify-content: space-between; /* 左右两边分布 */
-        }
-
-        .navbar .left-text {
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .navbar ul {
-            list-style-type: none; /* 去掉列表样式 */
+            font-family: "Times New Roman", Times, serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            display: flex; /* 横向排列链接 */
-            justify-content: flex-end; /* 将导航栏中的内容靠右对齐 */
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: justify;
         }
-
-        .navbar li {
-            padding: 0 20px; /* 每个导航链接的左右间距 */
+        .container {
+            width: 1080px;
+            margin: 65px auto;
+            background: #fff;
+            padding: 20px 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        .navbar a {
-            text-decoration: none;
-            color: black;
-            font-size: 20px;
-            font-weight: bold;
+        h1 {
+            color: #0056a8;
         }
-
-        .navbar a:hover {
-            color: #2A2D30; /* 悬停时改变颜色 */
+        h2 {
+            color: #0056a8;
+            border-bottom: 2px solid #0056a8;
+            padding-bottom: 5px;
         }
-
-        /* 左侧固定的侧边栏 */
-        .sidebar {
-            position: fixed; /* 固定在页面左侧 */
-            width: 170px; /* 15% 的宽度：1200px * 0.15 = 180px */
-            height: 100%; /* 占据整个页面高度 */
-            background-color: #f5f5f5;
-            padding: 5px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            left: calc((100vw - 1200px) / 2); /* 计算主容器左侧的偏移，确保居中 */
-            margin-top: 45px;
-        }
-
-
-        .sidebar img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 20px auto;
-        }
-        .sidebar h2, .sidebar h3 {
-            text-align: center;
-        }
-        .sidebar p {
-            text-align: center;
-            color: gray;
-        }
-        .sidebar p1 {
-            text-align: left;
-            color: gray;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-        .sidebar ul li {
-            margin: 10px 0;
-        }
-
-
-        .content {
-            margin-left: 185px; /* 留出 180px 的侧边栏空间 */
-            width: 1035px; /* 剩余的 85% 宽度：1200px - 180px */
-            padding: 5px;
-            margin-top: 45px;
+        .profile-picture {
+            float: right;
+            margin-left: 20px;
+            width: 200px;
+            border-radius: 8px;
         }
         .section {
-            margin-bottom: 15px;
-            padding: 15px;
-            border: 0px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            background-color: #fff;
-        }
-        .section h1 {
-            font-size: 24px;
-            margin-top: 0;
-        }
-        .section p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        .profile-pic {
-            width: 150px;
-            border-radius: 50%;
             margin-bottom: 20px;
         }
-        p{ margin:0 auto}
-        .spaced {
-            line-height: 1.8;
+        .email-link, .google-scholar {
+            color: #0056a8;
+            text-decoration: none;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+        ul.education li {
+            margin-left: 40px;
+            position: relative;
+            margin-bottom: 3px;
+        }
+        ul.education li::before {
+            content: "\2022";
+            color: #0056a8;
+            font-weight: bold;
+            display: inline-block;
+            width: 20px;
+            margin-left: -20px;
+            margin-bottom: 3px;
+        }
+        .bold {
+            font-weight: bold;
         }
         .paper {
             display: flex;
@@ -139,12 +74,12 @@
             padding: 6px;
             margin: 6px;
             border-radius: 8px;
-            width: 950px;
+            width: 1050px;
             height: auto;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* 添加阴影 */
         }
         .paper img {
-            width: 450px;
+            width: 500px;
             height: auto;
             border-radius: 4px;
             margin-right: 10px;
@@ -158,6 +93,7 @@
             font-size: 1.2em;
             font-weight: bold;
             margin-bottom: 8px;
+            color: #0056a8;
         }
         .paper-authors {
             font-size: 0.9em;
@@ -196,112 +132,62 @@
             display: inline-block;
             margin-bottom: 8px;
         }
-
-        /* 针对某个特定的链接去除下划线 */
-        a.no-underline {
-            text-decoration: none;
-            color: black; /* 设置颜色为黑色 */
-        }
-
-        /* 可选：鼠标悬停时保持无下划线 */
-        a.no-underline:hover {
-            text-decoration: none;
-            color: black; /* 设置颜色为黑色 */
-        }
     </style>
 </head>
 <body>
-<div class="main-container">
-    <div class="navbar">
-<!--        <div class="left-text">ABC</div>-->
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="mystudents.html">Students</a></li>
-        </ul>
-    </div>
+    <div class="container">
+        <h1>Peiliang Zhang (张培良)</h1>
+        <h2></h2>
+        <img src="img/Peiliang Zhang.png" alt="Profile Picture" class="profile-picture">
+        <p><strong>Ph.D. Student</strong></p>
 
-    <div class="sidebar">
-            <img src="img/peiliang.png" alt="Profile Picture">
-            <p style="font-family: Times New Roman; font-size:24px; color:black"><b>Peiliang Zhang</b></p>
-            <br>
-            <p style="font-family: Times New Roman; font-size:18px; color:black"><b>Ph.D. Student</b></p>
+        <div class="section">
+            <p><a href="http://cst.whut.edu.cn/" class="email-link">School of Computer Science and Artificial Intelligence</a><br>
+                <a href="https://www.whut.edu.cn/" class="email-link">Wuhan University of Technology</a></p>
 
-            <p style="font-family: Times New Roman; font-size:18px; color:black"><b>Wuhan University of Technology</b></p>
-            <br>
-            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fa fa-map-marker"></i> Wuhan, China</p>
-            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fa fa-institution"></i> Rm 1208 Aite Bldg</p>
-            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fa fa-envelope"></i> cheungbl@ieee.org</p>
-            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fab fa-weixin"></i>WHUT_PZ</p>
-            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fab fa-internet-explorer"></i> <a href="http://www.ai4science-in-zhang-lab.com/" class="no-underline">Website</a></p>
-            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fab fa-github"></i> <a href="https://github.com/papercode-for-cheung" class="no-underline">Github</a></p>
-            <p class="spaced", style="font-family: Times New Roman; font-size:18px; color:black; text-align:left"><i class="fa fa-graduation-cap"></i> <a href="https://scholar.google.com.hk/citations?user=KiRnrXgAAAAJ&hl=zh-CN" class="no-underline">Google Scholar</a></p>
+            <p><strong>Office:</strong> Rm 1208, Aite Bldg, No. 21 Gongda Road, Hongshan, Wuhan<br>
+            <strong>Email:</strong> <a href="mailto:cheungbl@ieee.org" class="email-link">cheungbl@ieee.org</a><br>
+            <strong><a href="https://scholar.google.com.hk/citations?user=KiRnrXgAAAAJ&hl=zh-CN" class="google-scholar">Google Scholar</a></strong></p>
+<!--            <strong><a href="https://scholar.google.com.hk/citations?user=KiRnrXgAAAAJ&hl=zh-CN" class="google-scholar">Google Scholar</a></strong> | <a href="#" class="email-link">My Full CV</a></p>-->
+        </div>
 
+        <div class="section">
+            <h2>Short Bio</h2>
+            <p>Peiliang Zhang is pursuing his Ph.D. degree in the School of Computer Science and Artificial Intelligence at <strong style="color: #0056a8">Wuhan University of Technology</strong> (武汉理工大学), Wuhan, China, supervised by <strong style="color: #0056a8">Prof. Jingling Yuan</strong>.
+                He is also currently a visiting Ph.D. student in Yonsei DataLab supervised by <strong style="color: #0056a8">Associate Prof. Yongjun Zhu</strong> at <strong style="color: #0056a8">Yonsei University</strong> (延世大学), Seoul, South Korea.
+                Before that, in 2022, he received his M.S. degree in software engineering from Dalian University (大连大学), Dalian, China, supervised by <strong style="color: #0056a8">Prof. Chao Che</strong> in Key Laboratory of Advanced Design and Intelligent Computing, Ministry of Education.</p>
 
-       </div>
-    <div class="content">
-            <div class="section" id="about">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">Welcome</h1>
-                <p style="text-align:justify; text-justify:inter-ideograph; font-size:18px; font-family: Times New Roman;">
-                    He is currently a 3rd-year Ph.D. Student in School of Computer Science and Artificial Intelligence at <a href="https://www.whut.edu.cn/"><b>Wuhan University of Technology</b></a>, Wuhan, China, advised by Prof. Jingling Yuan and Prof. Lin Li.
-                    He is also currently a visiting Ph.D. student in <a href="https://datalab.yonsei.ac.kr/"> <b>Yonsei DataLab</b> </a> supervised by Associate Prof. Yongjun Zhu at <b>Yonsei University</b>, Seoul, South Korea.</p>
-                 <p style="text-align:justify; text-justify:inter-ideograph; font-size:18px; font-family: Times New Roman;">
-				    His research interest includes AI for Science, Molecular Representation and Medical Informatics, etc.
-				    He has published more than 10 papers in high quality conferences and journals, such as DASFAA, IEEE BIBM, ESWA, etc. He has also served as a reviewer of multiple conferences and journals, including AAAI, TII, and bioinformatics.
-			    </p>
-            </div>
+            <p>His research interest broadly lies in the areas of AI for Science, Molecular Representation and Medical Informatics.
+                He has published more than 10 papers in high quality conferences and journals, such as DASFAA, IEEE BIBM, ESWA, etc. He has also served as a reviewer of multiple conferences and journals, including AAAI, TII, and bioinformatics.</p>
+        </div>
 
+        <div class="section">
+            <h2>Education Background</h2>
+            <ul class="education">
+                <li><strong style="color: #0056a8">Ph.D.:</strong> Wuhan University of Technology, Sep. 2022 - Now<br>
+                <span class="bold">Supervisor:</span> Prof. Jingling Yuan.</li>
+                <li><strong style="color: #0056a8">Visiting Scholar:</strong> Yonsei University, Dec. 2023 - Now<br>
+                <span class="bold">Supervisor:</span> Associate Prof. Yongjun Zhu.</li>
+                <li><strong style="color: #0056a8">M.S.:</strong> Dalian University, Sep. 2019 - Jun. 2022<br>
+                <span class="bold">Supervisor:</span> Prof. Chao Che.</li>
+                <li><strong style="color: #0056a8">B.E.:</strong> Shandong Agricultural University, Sep. 2015 - Jun. 2019<br>
+                <span class="bold">Supervisor:</span> Prof. Lu Wang.</li>
+            </ul>
+        </div>
 
-            <div class="section" id="News">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">News</h1>
-<!--                <li style="font-size:18px; font-family: Times New Roman; margin: 10px 0;"><i class="iconfont" style="font-size:17px;">&#xe602;</i> Welcome to the exchange and discussion of teachers, colleagues and students!<i class="iconfont" style="font-size:17px">&#xe602;</i></li>-->
-				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman; margin: 10px 0;">03/2024,&#128079&#128079&#128079 Our paper <b>Key Substructure Learning with Chemical Intuition for Material Property Prediction</b> was accepted by <font color="blue"><em>DASFAA 2024</em> (CCF B)</font>.</li>
-				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman; margin: 10px 0;">10/2023,&#128079&#128079&#128079 Our paper <b>KSGTN-DDI: Key Substructure-aware Graph Transformer Network for Drug-Drug Interaction Prediction</b> was accepted by <font color="blue"><em>IEEE BIBM 2023</em> (CCF B)</font>.</li>
-				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman; margin: 10px 0;">09/2023,&#128079&#128079&#128079 Our paper <b>NCH-DDA: Neighborhood Contrastive Learning Heterogeneous Network for Drug-Disease Association Prediction</b> was accepted by <font color="blue"><em>ESWA</em> (CCF C, JCR Q1,  TOP, IF: 8.5)</font>.</li>
-				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman; margin: 10px 0;">03/2023,&#128079&#128079&#128079 Our paper <b>IEA-GNN: Anchor-aware Graph Neural Network Fused with Information Entropy for Node Classification and Link Prediction </b> was accepted by <font color="blue"><em>Information Sciences</em> (CCF B, JCR Q1, TOP, IF: 8.1)</font>.</li>
-				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman; margin: 10px 0;">01/2022,&#128079&#128079&#128079 Our paper <b>DeepMGT-DTI: Transformer Network Incorporating Multilayer Graph Information for Drug-Target Interaction Prediction </b> was accepted by <font color="blue"><em>CIBM</em> (JCR Q1, TOP, IF: 7.7)</font>.</li>
-            </div>
-
-
-
-             <div class="section" id="Educational Experience">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">Educational Experience</h1>
-                <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 10px 0;"><i class="iconfont">&#xe697;</i> <b>Ph.D.</b>: Sep. 2022 to present, School of Computer Science and Artificial Intelligence, Wuhan University of Technology, Computer Science and Technology (Academic), Supervisor: &nbsp;<a href="http://cst.whut.edu.cn/xygk/szdw/201505/t20150527_876882.shtml">Prof. Jingling Yuan</a></li>
-				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 10px 0;"><i class="iconfont">&#xe697;</i> <b>Visiting Ph.D.</b>: Dec. 2024 to present, Yonsei DataLab, Department of Library and Information Science, Yonsei University, Supervisor: &nbsp;<a href="https://datalab.yonsei.ac.kr/yongjunzhu/">Associate Prof. Yongjun Zhu</a></li>
-                <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 10px 0;"><i class="iconfont">&#xe697;</i> <b>M.D.</b>: Sep. 2019 to Jun. 2022, Key Laboratory of Advanced Design and Intelligent Computing, Ministry of Education, Dalian University, Software Engineering (Academic), Supervisor: &nbsp;<a href="http://nlcad.dlu.edu.cn/info/1005/2161.htm">Prof. Chao Che</a></li>
-				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 10px 0;"><i class="iconfont">&#xe697;</i> <b>B.D.</b>: Sep. 2015 to Jun. 2019, School of Information Science and Engineering, Shandong Agricultural University, Computer Science and Technology, Supervisor: &nbsp;<a href="http://xinxi.sdau.edu.cn/yjs/2021/0705/c12290a187615/page.htm">Prof. Lu Wang</a></li>
-            </div>
-
-
-
-            <div class="section" id="Research Interests">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">Research Interests</h1>
-                <b class="fontsize_based" style="font-size:18px; font-family: Times New Roman;">AI for Science, Medical Informatics</b>
-				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman; margin: 10px 0;"><b>Medical Informatics: </b>
-					We study NLP and CV tasks involved in medical informatics, such as drug repositioning, medical image processing, biomedical named entity recognition, clinical text mining, etc., and construct neural network models for the task characteristics and application scenarios.
-					Relevant papers have been published in journals and conferences, such as ESWA, BIBM, EAAI, etc.
-					</li>
-				<li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman; margin: 10px 0;"><b>AI for Science: </b>
-					We have carried out research on core substructure identification, material property analysis and prediction, and lithium battery failure knowledge mapping for scientific problems in materials science and constructed AI methods for multi-dimensional molecular structure representation learning.
-					Relevant papers have been published in journals and conferences, such as DASFAA, etc.</li>
-            </div>
-
-
-
-            <div class="section" id="Selected Publications">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">Selected Publications</h1>
-<!--                <a class="fontsize_based" style="font-size:18px; font-family: Times New Roman;">*: corresponding author, #: co-author.</a>-->
-
-                <div class="paper">
+        <div class="section">
+            <h2>Papers</h2>
+            <p><strong>All publications in <a href="publications.html" style="color: #0056a8">Publications Page</a>.</strong></p>
+            <div class="paper">
                     <img src="img/paperimg/KSCI.png" alt="Paper image">
                     <div class="paper-content">
                         <div>
                             <div class="paper-badge">DASFAA 2024</div>
                             <div class="paper-title">
-                                <a href="https://link.springer.com/chapter/10.1007/978-981-97-5575-2_6" target="_blank">Key Substructure Learning with Chemical Intuition for Material Property Prediction</a>
+                                Key Substructure Learning with Chemical Intuition for Material Property Prediction
                             </div>
-                            <div class="paper-authors">
-                                <strong>Peiliang Zhang</strong>, Jingling Yuan, Lin Li, Wen Luo, Jiwei Hu, Xin Li
+                            <div>
+                                <strong style="color: #0056a8">Peiliang Zhang</strong>, Jingling Yuan, Lin Li, Wen Luo, Jiwei Hu, Xin Li
                             </div>
                             <div class="paper-code">
 <!--                                <a href="https://your-code-link.com" target="_blank" style="margin-right: 16px;"><i class="fas fa-file-code icon" title="Code File"></i> Code</a>-->
@@ -316,18 +202,18 @@
                             </div>
                         </div>
                     </div>
-                </div>
+            </div>
 
-                <div class="paper">
+            <div class="paper">
                     <img src="img/paperimg/NCHDDA.png" alt="Paper image">
                     <div class="paper-content">
                         <div>
                             <div class="paper-badge">ESWA 2024</div>
                             <div class="paper-title">
-                                <a href="https://www.sciencedirect.com/science/article/pii/S0957417423023576" target="_blank">NCH-DDA: Neighborhood Contrastive Learning Heterogeneous Network for Drug-Disease Association Prediction</a>
+                                NCH-DDA: Neighborhood Contrastive Learning Heterogeneous Network for Drug-Disease Association Prediction
                             </div>
-                            <div class="paper-authors">
-                                <strong>Peiliang Zhang</strong>, Chao Che, Bo Jin, Jingling Yuan, Ruixin Li, Yongjun Zhu
+                            <div>
+                                <strong style="color: #0056a8">Peiliang Zhang</strong>, Chao Che, Bo Jin, Jingling Yuan, Ruixin Li, Yongjun Zhu
                             </div>
                             <div class="paper-code">
                                 <a href="https://github.com/papercode-for-cheung/NCH_code" target="_blank" style="margin-right: 16px;"><i class="fas fa-file-code icon" title="Code File"></i> Code</a>
@@ -343,124 +229,122 @@
                     </div>
                 </div>
 
-
-
-
-            </div>
-
-
-
-            <div class="section" id="Patents">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">Patents</h1>
-                <ol>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        <b>Peiliang Zhang </b>, Yuanqing Hao, Jianing Liu, et al. A computer with a fingerprint recognition switch [P]. China: ZL201820878511.7, 20180607.
-<!--                        <b>张培良</b>, 郝元卿, 刘佳宁, 等. 一种带有指纹识别开关的计算机[P]. 中国: ZL201820878511.7, 20180607. (实用新型专利)-->
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        Chao Che, Yunjiong Liu, <b>Peiliang Zhang</b>. A drug-disease interaction prediction method fusing multi-neighborhood association information [P]. China: CN202211122087.0, 20220915.
-<!--                        车超, 刘运炯, <b>张培良</b>. 一种融合多邻域关联信息的药物-疾病相互作用预测方法[P]. 中国: 202211122087.0, 20220915. (发明专利，受理)-->
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        Chao Che, <b>Peiliang Zhang</b>. A drug-target interaction prediction method incorporating multilayer drug structure information [P]. China: CN202111313022.X, 20211108.
-<!--                        车超, <b>张培良</b>. 一种融合多层药物结构信息的药物-靶点相互作用预测方法[P]. 中国: 202111313022.X, 20211108. (发明专利，受理)-->
-                    </li>
-                </ol>
-            </div>
-
-
-
-            <div class="section" id="Honors and Awards">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">Honors and Awards</h1>
-                <ol>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2024.09, "China Construction Bank Cup" the 10th Liaoning College Students 'Internet+' Innovation and Entrepreneurship Competition, <b>Gold Award</b>&#129351;</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2023.12, The China International College Students' Innovation Competition (CICSIC) 2024, <b>Bronze Award</b>&#129353; (No. 20230184C)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2023.11, The 4th "DuZheng Cup" - Biomedical Artificial Intelligence Innovation and Application Competition, Second Prize&#129352; (Prize: 3K)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2023.10, "China Construction Bank Cup" the 9th Shandong College Students 'Internet+' Innovation and Entrepreneurship Competition, Bronze Award&#129353; (No. 2023HLWJ0695)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2023.09, The 5th “Huawei Cup” China Graduate AI Innovation Competition, <b>Second Prize</b>&#129352; (Prize: 2K)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2023.09, The 2023 China Collegiate Computing Contest C4-Network Technology Challenge, <b>Second Prize</b>&#129352; (No. CCCC2023NTC1026, Prize: 5K)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2023.09, "China Construction Bank Cup" the 9th Liaoning College Students 'Internet+' Innovation and Entrepreneurship Competition, <b>Gold Award</b>&#129351; (No. 20237181150220)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2023.07, The 2023 China Collegiate Computing Contest C4-Network Technology Challenge (Central China Region), <b>First Prize</b>&#129351; (No. CCCC2023NTC0378)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2023.06, The 16th Chinese Collegiate Computing Competition (Central South Region), Second Prize&#129352; (No. ZN202320254)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2023.03, Huawei Technologies Limited Conundrum Reveals "[Net Element Intelligence] Embedded Ultra-Lightweight and Low-Power Intelligent Computing Technology", <b>Spark Award</b>&#127942;(Team, Prize: 2W)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2023.01, The 19th “Huawei Cup” China Post-graduate Mathematical Contest in Modeling, <b>Second Prize</b>&#129352; (No. E2022202133)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2022.11, The 5th Shanghai Jiao Tong University-Wining Health Smart Healthcare Challenge (Artificial Intelligence University Group), <b>Foresight Award</b>&#129352; (The Second, Prize: 1W)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2022.09, "China Construction Bank Cup" the 8th Liaoning College Students 'Internet+' Innovation and Entrepreneurship Competition, <b>Gold Award</b>&#129351; (No. 20223341150169)</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2022.06, The Excellent Master's Thesis, Dalian University&#127881;&#127881;</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2022.05, The Outstanding Graduates of Liaoning Province&#127881;&#127881;</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2019.03, The Outstanding Graduates of Shandong Province&#127881;&#127881;(No. 201904611)</li>
-                        <!-- <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">2023年07月，第一届武汉理工大学研究生人工智能创新大赛一等奖&#127942;</li>-->
-
-                </ol>
-            </div>
-
-
-
-            <div class="section" id="Academic Services">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">Academic Services</h1>
-                <p class="fontsize_based" style="font-size:18px; font-family: Times New Roman;"><b>Academic Exchange</b></p>
-                <ul>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        2024.08, ACM SIGKDD Workshop KDD-AIDSH 2024, Poster, <i class="iconfont">&#xe61c;</i> Barcelona, Spain
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        2024.07, 29th International Conference on Database Systems for Advanced Applications (DASFAA), Oral, <i class="iconfont">&#xe61c;</i> Gifu Japan
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        2024.06, 1st International Conference on Cloud and Network Computing (ICCNC), Oral, <i class="iconfont">&#xe61c;</i> Jinhua, China
-                    </li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">
-                        2023.12, 2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Oral, <i class="iconfont">&#xe61c;</i> lstanbul, Turkey
-                    </li>
-                </ul>
-
-                <p class="fontsize_based" style="font-size:18px; font-family: Times New Roman;"><b>Reviewer</b></p>
-                <ul>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">IEEE Transactions on Industrial Informatics</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">Bioinformatics</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">Expert Systems with Applications</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">Artificial Intelligence in Medicine</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">Information Sciences</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">EMNLP 2023</li>
-                </ul>
-            </div>
-
-            <div class="section" id="Students">
-                <h1 style="color:#022285;font-family: Times New Roman;font-size:26px;">Students</h1>
-                <p class="fontsize_based" style="font-size:18px; font-family: Times New Roman;">More information is available at <a href="mystudents.html">Students Page</a>.</p>
-                <p class="fontsize_based" style="font-size:18px; font-family: Times New Roman;"><b>Master</b></p>
-                <ul>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">Yujia Tong: Wuhan University of Technology, 2024</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">Qixuan Zhao: Wuhan University of Technology, 2023</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">Yuanjie Liu: Wuhan University of Technology, 2023</li>
-                </ul>
-
-                <p class="fontsize_based" style="font-size:18px; font-family: Times New Roman;"><b>Undergraduate</b></p>
-                <ul>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">Siying Wang: Wuhan University of Technology, 2023</li>
-                    <li style="text-align:justify; text-justify:inter-ideograph;font-size:18px; font-family: Times New Roman;margin: 8px 0;">Xuefeng Hou: Wuhan University of Technology, 2021</li>
-                </ul>
-            </div>
-
-
-
-            <div>
-<!-- 		        <a href='https://clustrmaps.com/site/1bzok'  title='Visit tracker'>
-			        <img src='//clustrmaps.com/map_v2.png?cl=ebf1ee&w=500&t=tt&d=vR5pyLRyf8CqplsnasPYTJlKRFzMVdYMmo_T5oLkqes&co=2d78ad&ct=ffffff' style="clear: both; display: block; margin: auto;" />
-		        </a> -->
-		    <a href="https://clustrmaps.com/site/1c1xe"  title="Visit tracker">
-			    <img src="//www.clustrmaps.com/map_v2.png?d=mqdUFQmv_AUwNYeLr9eXnEHQ-Y-JuRurQM-oKkZAUD4&cl=ffffff" style="clear: both; display: block; margin: auto;" />
-		    </a>
-		    </div>
-
-<!--             <div style="text-align:center;">
-                <a href='https://beian.miit.gov.cn/'>鲁ICP备2024081097号-1</a>
-		    </div> -->
+<!--            <ul class="education">-->
+<!--                <li>-->
+<!--                    <strong style="color: #0056a8">[INFOCOM]</strong> <span style="color: #0056a8">OTAS: An Elastic Transformer Serving System via Token Adaptation</span>,<br>-->
+<!--                    Jinyu Chen, Wenchao Xu, <strong style="color: #0056a8">Zicong Hong*</strong>, Song Guo, Haozhao Wang, Jie Zhang and Deze Zeng. (*corresponding author)<br>-->
+<!--                    In IEEE International Conference on Computer Communications (INFOCOM '24), 2024. <br>-->
+<!--                    (<strong style="color: #0056a8">CCF-A</strong>)-->
+<!--                </li>-->
+<!--            </ul>-->
         </div>
 
 
 
-</div>
+        <div class="section">
+            <h2>Academic Service</h2>
+            <h3 style="color: #0056a8">Academic Exchange</h3>
+            <ul class="education">
+                <li>Aug. 2024, ACM SIGKDD Workshop KDD-AIDSH 2024, Poster, <i class="iconfont">&#xe61c;</i> Barcelona, Spain</li>
+                <li>Jul. 2024, 29th International Conference on Database Systems for Advanced Applications (DASFAA), Oral, <i class="iconfont">&#xe61c;</i> Gifu Japan</li>
+                <li>Jun. 2024, 1st International Conference on Cloud and Network Computing (ICCNC), Oral, <i class="iconfont">&#xe61c;</i> Jinhua, China</li>
+                <li>Dec. 2023, 2023 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Oral, <i class="iconfont">&#xe61c;</i> lstanbul, Turkey</li>
+            </ul>
+            <h3 style="color: #0056a8">Reviewer</h3>
+            <ul class="education">
+                <li>IEEE Transactions on Industrial Informatics</li>
+                <li>Bioinformatics</li>
+                <li>Expert Systems with Applications</li>
+                <li>Artificial Intelligence in Medicine</li>
+                <li>Information Sciences</li>
+                <li>EMNLP 2023</li>
+                <li>ICASSP 2025</li>
+            </ul>
+        </div>
+
+
+        <div class="section">
+            <h2>Academic Service</h2>
+            <h3 style="color: #0056a8">2024</h3>
+            <ul class="education">
+                <li>2024年12月，第十届中国研究生智慧城市技术与创意设计大赛&#129351;<strong style="color: #0056a8">一等奖</strong></li>
+                <li>2024年9月，“建行杯”辽宁省第十届“互联网+”大学生创新创业大赛&#129351;<strong style="color: #0056a8">金奖</strong></li>
+            </ul>
+
+            <h3 style="color: #0056a8">2023</h3>
+            <ul class="education">
+                <li>2023年1月, “华为杯”第十九届中国研究生数学建模竞赛&#129352;<strong style="color: #0056a8">二等奖</strong>（证书编号：E2022202133）</li>
+                <li>2023年9月，“华为杯”第五届中国研究生人工智能创新大赛&#129352;<strong style="color: #0056a8">二等奖</strong>（奖金2K）</li>
+                <li>2023年9月，2023年中国高校计算机C4网络技术挑战赛总决赛&#129352;<strong style="color: #0056a8">二等奖</strong>（证书编号：CCCC2023NTC1026，奖金5K）</li>
+                <li>2023年12月，中国国际大学生创新大赛（2023）&#129353;<strong style="color: #0056a8">铜奖</strong>（证书编号:20230184C）</li>
+                <li>2023年6月, 第十六届中国大学生计算机设计大赛（中南地区赛）&#129352;二等奖（证书编号：ZN202320254）</li>
+                <li>2023年7月，2023年中国高校计算机C4网络技术挑战赛华中赛区&#129351;<strong style="color: #0056a8">一等奖</strong>（证书编号：CCCC2023NTC0378）</li>
+                <li>2023年9月, “建行杯”辽宁省第九届“互联网+”大学生创新创业大赛&#129351;<strong style="color: #0056a8">金奖</strong>（证书编号：20237181150220）</li>
+                <li>2023年11月，“建行杯”山东省第九届“互联网+”大学生创新创业大赛&#129353;铜奖（证书编号：2023HLWJ0695）</li>
+                <li>2023年3月, 华为技术有限公司难题揭榜《[网元智能]嵌入式超轻量低功耗智能计算技术》&#127942;<strong style="color: #0056a8">火花奖</strong>（团队，奖金2W）</li>
+                <li>2023年11月，第四届“都正杯”·生物医药人工智能创新应用大赛&#129352;二等奖（奖金3K）</li>
+            </ul>
+
+            <h3 style="color: #0056a8">2022</h3>
+            <ul class="education">
+                <li>2022年5月, 辽宁省优秀毕业生&#127942;</li>
+                <li>2022年9月, “建行杯”辽宁省第八届“互联网+”大学生创新创业大赛&#129351;<strong style="color: #0056a8">金奖</strong>（证书编号：20223341150169）</li>
+                <li>2022年6月, 大连大学优秀硕士学位论文&#127942;（论文题目：基于图信息融合和异构网络的药物重定位研究）</li>
+                <li>2022年11月, 第五届上海交大-卫宁健康智慧医疗挑战赛人工智能高校组&#129352;<strong style="color: #0056a8">前瞻奖</strong>（\textbf{第二名，奖金1W}）</li>
+            </ul>
+
+           <h3 style="color: #0056a8">Before 2022</h3>
+            <ul class="education">
+                <li>2019年3月, 山东省优秀毕业生&#127942;（证书编号：201904611）</li>
+            </ul>
+        </div>
+
+
+        <div class="section">
+            <h2>Papers</h2>
+            <p><strong>More students information in <a href="mystudents.html" style="color: #0056a8">Students Page</a>.</strong></p>
+            <h3 style="color: #0056a8">Master</h3>
+            <ul class="education">
+                <li><strong  style="color: #0056a8">Yujia Tong</strong>: Wuhan University of Technology, 2024</li>
+                <li><strong  style="color: #0056a8">Xi Wu</strong>: Dalian University, 2024</li>
+                <li><strong  style="color: #0056a8">Qixuan Zhao</strong>: Wuhan University of Technology, 2023</li>
+                <li><strong  style="color: #0056a8">Yuanjie Liu</strong>: Wuhan University of Technology, 2023</li>
+            </ul>
+            <h3 style="color: #0056a8">Undergraduate</h3>
+            <ul class="education">
+                <li><strong  style="color: #0056a8">Siying Wang</strong>: Wuhan University of Technology, 2023</li>
+                <li><strong  style="color: #0056a8">Yang Wang</strong>:  Wuhan University of Technology, 2022</li>
+<!--                <li></li>-->
+                <li><strong  style="color: #0056a8">Xuefeng Hou</strong>: Wuhan University of Technology, 2021</li>
+
+            </ul>
+
+        </div>
+
+
+<!--        <div>-->
+<!--&lt;!&ndash; 		        <a href='https://clustrmaps.com/site/1bzok'  title='Visit tracker'>-->
+<!--			        <img src='//clustrmaps.com/map_v2.png?cl=ebf1ee&w=500&t=tt&d=vR5pyLRyf8CqplsnasPYTJlKRFzMVdYMmo_T5oLkqes&co=2d78ad&ct=ffffff' style="clear: both; display: block; margin: auto;" />-->
+<!--		        </a> &ndash;&gt;-->
+<!--		    <a href="https://clustrmaps.com/site/1c1xe"  title="ClustrMaps"><img src="//www.clustrmaps.com/map_v2.png?d=mqdUFQmv_AUwNYeLr9eXnEHQ-Y-JuRurQM-oKkZAUD4&cl=ffffff" /></a>-->
+<!--		    </div>-->
+
+<!--<p id="citation-count">Total Citations: <span id="citation-number">Loading...</span></p>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
 </body>
 <style>
 /* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
